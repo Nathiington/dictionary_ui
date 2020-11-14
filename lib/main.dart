@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_search_bar/flutter_search_bar.dart';
 
 void main() {
@@ -12,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Dictionary',
       theme: ThemeData(       
-        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home:MyHomePage(),
@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
       AppBar buildAppBar(BuildContext context)
       {
         return new AppBar(
+          backgroundColor: Color.alphaBlend(Colors.blue, Colors.black),
           title: Text("Dictionary"),
           actions: [searchBar.getSearchAction(context)]
         );
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
       }
       
 
-  
+
 
   @override
   Widget build(BuildContext context) {
@@ -59,18 +60,178 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-           
-          ],
+           children: <Widget>[
+            
+             /******************CAAAARRRRRD*******************************/
+           Card(
+             shadowColor: Colors.black,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const ListTile(
+                    title: Text('Word'),
+                    subtitle: Text('Definition'),
+                  ),
+                  ButtonBar(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.multitrack_audio_rounded),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255,0.5),
+                        //pronounce or speak
+                        onPressed: () {/* ... */},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.text_fields_outlined),
+                        color: Colors.blue,
+                        splashColor:Color.fromRGBO(163, 237, 255,0.5),
+                        //Translations
+                        onPressed: () {/* ... */},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            /****************************** END CAAAAAAAAAAAAAARRRRRRRRRD*********************/
+               /******************CAAAARRRRRD*******************************/
+           Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const ListTile(
+                    title: Text('Word'),
+                    subtitle: Text('Definition'),
+                  ),
+                  ButtonBar(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.multitrack_audio_rounded),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255,0.5),
+                        //pronounce or speak
+                        onPressed: () {/* ... */},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.text_fields_outlined),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255,0.5),
+                        //Translations
+                        onPressed: () {/* ... */},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            /******************************END CAAAAAAAAAAAAAARRRRRRRRRD*********************/
+            
+               /******************CAAAARRRRRD*******************************/
+           Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const ListTile(
+                    title: Text('Word'),
+                    subtitle: Text('Definition'),
+                  ),
+                  ButtonBar(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.multitrack_audio_rounded),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255,0.5),
+                        //pronounce or speak
+                        onPressed: () {/* ... */},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.text_fields_outlined),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255,0.5),
+                        //Translations
+                        onPressed: () {/* ... */},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            /******************************END CAAAAAAAAAAAAAARRRRRRRRRD*********************/
+            
+               /******************CAAAARRRRRD*******************************/
+           Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const ListTile(
+                    title: Text('Word'),
+                    subtitle: Text('Definition'),
+                  ),
+                  ButtonBar(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.multitrack_audio_rounded),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255,0.5),
+                        //pronounce or speak
+                        onPressed: () {/* ... */},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.text_fields_outlined),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255,0.5),
+                        //Translations
+                        onPressed: () {/* ... */},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            /****************************** END CAAAAAAAAAAAAAARRRRRRRRRD*********************/
+            
+               /******************CAAAARRRRRD*******************************/
+           Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const ListTile(
+                    title: Text('Word'),
+                    subtitle: Text('Definition'),
+                  ),
+                  ButtonBar(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.multitrack_audio_rounded),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255, 0.5),
+                        //pronounce or speak
+                        onPressed: () {/* ... */},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.text_fields_outlined),
+                        color: Colors.blue,
+                        splashColor: Color.fromRGBO(163, 237, 255, 0.5),
+                        //Translations
+                        onPressed: () {/* ... */},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            /******************************END CAAAAAAAAAAAAAARRRRRRRRRD*********************/
+            
+            ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed:(){
 
         },
-        child: Icon(Icons.volume_up_outlined,
+        child: Icon(Icons.mic,
                     color: Colors.white,),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

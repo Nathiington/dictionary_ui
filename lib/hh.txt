@@ -1,0 +1,2 @@
+0.1.0 general structure of the page with search bar
+0.1.1 structure looks good. Is not setup to scroll so fix that. Also to create an automatic card list builder. Then begin on design aspects.
