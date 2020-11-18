@@ -1,6 +1,10 @@
+import 'package:dictionary_ui/Bookmark.dart';
+import 'package:dictionary_ui/History.dart';
+import 'package:dictionary_ui/Phrases.dart';
+import 'package:dictionary_ui/Words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_search_bar/flutter_search_bar.dart';
-
+import 'Words.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +18,8 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primaryColor: Color.fromRGBO(1, 44, 77, 1),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Color.fromRGBO(7, 19, 28, 1),),
+          backgroundColor: Color.fromRGBO(17, 8, 26, 1),
+        ),
         backgroundColor: Color.fromRGBO(73, 84, 110, 0.7),
         scaffoldBackgroundColor: Color.fromRGBO(33, 38, 51, 1),
         buttonColor: Color.fromRGBO(0, 145, 111, 1),
@@ -50,50 +55,76 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   @override
   Widget build(BuildContext context) {
-    final items = List<String>.generate(100, (i) => "Item $i");
+    //final items = List<String>.generate(100, (i) => "Item $i");
     return new Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: searchBar.build(context),
-      body: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return Column(
-            children: <Widget>[
-              /******************CARD*******************************/
-              Card(
-                shadowColor: Colors.black,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    const ListTile(
-                      title: Text('Word'),
-                      subtitle: Text('Definition'),
-                    ),
-                    ButtonBar(
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.multitrack_audio_rounded),
-
-                          splashColor: Color.fromRGBO(163, 237, 255, 0.5),
-                          //pronounce or speak
-                          onPressed: () {/* ... */},
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.text_fields_outlined),
-
-                          splashColor: Color.fromRGBO(163, 237, 255, 0.5),
-                          //Translations
-                          onPressed: () {/* ... */},
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              /****************************** END CARD*********************/
-            ],
-          );
-        },
+      body: ListView(
+        children: <Widget>[
+          /******************BOOKMARK CARD*******************************/
+          Card(
+            shadowColor: Colors.black,
+            child: 
+                ListTile(
+                  title: Text('Bookmark'),
+                  leading: Icon(Icons.bookmark_border),
+                  onTap: () {
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Bookmark()),
+                    );
+                  },
+                ),        
+            ),
+     
+          /****************************** END CARD*********************/
+          /******************PHRASES CARD*******************************/
+          Card(
+            shadowColor: Colors.black,
+            child: ListTile(
+                  title: Text('Phrases'),
+                  leading: Icon(Icons.text_snippet),
+                  onTap: () {
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Phrases()),
+                    );
+                  },
+                ),  
+            ),
+          
+          /****************************** END CARD*********************/
+          /******************HISTORY CARD*******************************/
+          Card(
+            shadowColor: Colors.black,
+            child: ListTile(
+                  title: Text("History"),
+                  leading: Icon(Icons.history),
+                  onTap: () {
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => History()),
+                    );
+                  },
+                ),             
+            ),       
+          /****************************** END CARD*********************/
+          /******************WORDS CARD*******************************/
+          Card(
+            shadowColor: Colors.black,
+            child: ListTile(
+                  title: Text('Words'),
+                  leading: Icon(Icons.all_inclusive),
+                  onTap: () {
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WordPage()),
+                    );
+                  },
+                ),             
+            ),         
+          /****************************** END CARD*********************/
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
