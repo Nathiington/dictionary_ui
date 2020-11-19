@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color.fromRGBO(73, 84, 110, 0.7),
         scaffoldBackgroundColor: Color.fromRGBO(33, 38, 51, 1),
         buttonColor: Color.fromRGBO(0, 145, 111, 1),
-        cardColor: Color.fromRGBO(98, 123, 150, 1),
+        cardColor: Color.fromRGBO(56, 74, 94, 1),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
@@ -59,15 +59,22 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: searchBar.build(context),
-      body: ListView(
+      body: GridView.count(
+        crossAxisCount: 2,
         children: <Widget>[
           /******************BOOKMARK CARD*******************************/
-          Card(
+          Container(
+            padding: EdgeInsets.only(top: 2.50,bottom: 5.0),
+            height: 150,
+          child: Card(
+            elevation:10.0,
             shadowColor: Colors.black,
             child: 
                 ListTile(
-                  title: Text('Bookmark'),
-                  leading: Icon(Icons.bookmark_border),
+                  title: Text('Bookmark',
+                  style: TextStyle(fontSize: 27),),
+                  trailing: Icon(Icons.bookmark_border,
+                  size: 35.0,),
                   onTap: () {
                      Navigator.push(
                         context,
@@ -76,14 +83,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),        
             ),
-     
+          ),
           /****************************** END CARD*********************/
           /******************PHRASES CARD*******************************/
-          Card(
+          Container(
+            padding: EdgeInsets.only(top: 2.50,bottom: 5.0),
+            height: 150,
+          child: Card(
+            elevation: 10.0,
             shadowColor: Colors.black,
             child: ListTile(
-                  title: Text('Phrases'),
-                  leading: Icon(Icons.text_snippet),
+                  title: Text('Phrases',
+                  style: TextStyle(fontSize: 27),),
+                  trailing: Icon(Icons.text_snippet,
+                  size: 35.0,),
                   onTap: () {
                      Navigator.push(
                         context,
@@ -92,41 +105,57 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),  
             ),
-          
+          ),
           /****************************** END CARD*********************/
           /******************HISTORY CARD*******************************/
-          Card(
-            shadowColor: Colors.black,
-            child: ListTile(
-                  title: Text("History"),
-                  leading: Icon(Icons.history),
-                  onTap: () {
-                     Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => History()),
-                    );
-                  },
-                ),             
-            ),       
+          Container(
+            padding: EdgeInsets.only(top: 5.0),
+            height: 150,
+            child: Card(
+              elevation: 10.0,
+              shadowColor: Colors.black,
+              child: ListTile(
+                    title: Text("History",
+                  style: TextStyle(fontSize: 27),),
+                    trailing: Icon(Icons.history,
+                  size: 35.0,),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => History()),
+                      );
+                    },
+                  ),             
+            ), 
+          ),      
           /****************************** END CARD*********************/
           /******************WORDS CARD*******************************/
-          Card(
-            shadowColor: Colors.black,
-            child: ListTile(
-                  title: Text('Words'),
-                  leading: Icon(Icons.all_inclusive),
-                  onTap: () {
-                     Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => WordPage()),
-                    );
-                  },
-                ),             
-            ),         
+          Container(
+            padding: EdgeInsets.only(top: 5.0),
+            height: 150,
+            child:  Card(
+              elevation: 10.0,
+              shadowColor: Colors.black,
+              child: ListTile(
+                    title: Text('Words',
+                  style: TextStyle(fontSize: 27),),
+                    trailing: Icon(Icons.all_inclusive,
+                  size: 35.0,),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WordPage()),
+                      );
+                    },
+                  ),             
+            ),     
+          ),    
           /****************************** END CARD*********************/
         ],
+          
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor:  Color.fromRGBO(56, 74, 94, 1),
         onPressed: () {},
         child: Icon(
           Icons.mic,
