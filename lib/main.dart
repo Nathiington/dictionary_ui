@@ -4,6 +4,7 @@ import 'package:dictionary_ui/Phrases.dart';
 import 'package:dictionary_ui/Words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_search_bar/flutter_search_bar.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'Words.dart';
 
 void main() {
@@ -27,7 +28,13 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: AnimatedSplashScreen(
+        nextScreen:MyHomePage(),
+        duration: 3000,
+        splash: Icons.search,
+        splashTransition: SplashTransition.slideTransition,
+        backgroundColor: Color.fromRGBO(56, 74, 94, 1),
+        ),
     );
   }
 }
@@ -63,10 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisCount: 2,
         children: <Widget>[
           /******************BOOKMARK CARD*******************************/
-          Container(
-            padding: EdgeInsets.only(top: 2.50,bottom: 5.0),
-            height: 150,
-          child: Card(
+          Card(
             elevation:10.0,
             shadowColor: Colors.black,
             child: 
@@ -83,13 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),        
             ),
-          ),
           /****************************** END CARD*********************/
           /******************PHRASES CARD*******************************/
-          Container(
-            padding: EdgeInsets.only(top: 2.50,bottom: 5.0),
-            height: 150,
-          child: Card(
+          Card(
             elevation: 10.0,
             shadowColor: Colors.black,
             child: ListTile(
@@ -105,13 +105,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),  
             ),
-          ),
           /****************************** END CARD*********************/
           /******************HISTORY CARD*******************************/
-          Container(
-            padding: EdgeInsets.only(top: 5.0),
-            height: 150,
-            child: Card(
+          Card(
               elevation: 10.0,
               shadowColor: Colors.black,
               child: ListTile(
@@ -126,14 +122,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     },
                   ),             
-            ), 
-          ),      
+            ),       
           /****************************** END CARD*********************/
           /******************WORDS CARD*******************************/
-          Container(
-            padding: EdgeInsets.only(top: 5.0),
-            height: 150,
-            child:  Card(
+           Card(
               elevation: 10.0,
               shadowColor: Colors.black,
               child: ListTile(
@@ -148,8 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     },
                   ),             
-            ),     
-          ),    
+            ),        
           /****************************** END CARD*********************/
         ],
           
@@ -165,3 +156,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
