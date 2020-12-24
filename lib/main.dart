@@ -66,8 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: searchBar.build(context),
-      body: GridView.count(
-        crossAxisCount: 2,
+      body:ListView(
         children: <Widget>[
           /******************BOOKMARK CARD*******************************/
           Card(
